@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<script src="javascript.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<textarea name="text" id="text" cols="30" rows="10"></textarea>
+<p>В тексте символов:</p>
+<p id=result2></p>
+<p>В тексте символов за вычетом пробелов:</p>
+<p id=result3></p>
+<script>
+let text = document.querySelector('#text');
+let result = document.querySelector('#result');
+let result2 = document.querySelector('#result2');
+let result3 = document.querySelector('#result3');
+
+text.addEventListener('blur', function() {
+result2.innerHTML=WordNumber1(text.value);
+result3.innerHTML=WordNumber1(text.value)-(WordNumber(text.value)-1);
+});
+function WordNumber(str) {
+return str.split(" ").length;
+}
+function WordNumber1(str) {
+return str.split("").length;
+}
+
+</script>
+</body>
+
+</html>
